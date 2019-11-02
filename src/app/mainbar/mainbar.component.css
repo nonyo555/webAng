@@ -1,0 +1,30 @@
+/*
+.bar{
+  
+    font: 1em sans-serif;
+    background-color: blueviolet;
+    margin: 0 auto;
+    display:  grid;
+    grid-template-columns: 30% auto;
+    
+}*/
+.bar{
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: gray;
+    display:  grid;
+    grid-template-columns: 30% auto;
+}
+.option{
+    background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+section{
+    width: 80%;
+    margin:  0 auto;
+    padding: 2em;
+}
