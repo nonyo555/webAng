@@ -1,1 +1,15 @@
-<p>register works!</p>
+<h1>Register</h1>
+<p>Email</p>
+<input id = 'email' type="email"   formControlName="email"><br>
+<p>Password</p>
+<input id="pass" type="password" formControlName="password"> <br>
+<p>Confirm Password</p>
+<input id="pass2" type="password" formControlName="password"> <br>
+<p>Name</p>
+<input id="name" type="string" formControlName="string"> <br>
+<p>Age</p>
+<input id="age" type="int" formControlName="int"> <br>
+<p>Comment</p>
+<textarea rows="4" cols="50" id="comment" type="string" formControlName="string"></textarea>  <br><br>
+<button class = 'but_reg' (click)="doRegister()">Confirm</button> &nbsp;
+<button  class = 'cancel'[routerLink]="['/log']" routerLinkActive="router-link-active" > Cancel</button>

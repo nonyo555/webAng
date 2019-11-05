@@ -1,9 +1,10 @@
 <div class = 'logpage'>
-    <p>Username</p>
-    <input type ='email'>
+    <p>Email</p>
+    <input id ='email' type ='email'>
     <p>Password</p>
-    <input type = 'text'><br><br>
-    <Button name ='summit' (click)='alert()'>Summit</Button><br><br>
-    <Button name ='summit1' (click)='doFacebookLogin()'>Summit facebook</Button><br><br>
-    <Button name ='summit2' (click)='doGoogleLogin()'>Summit Google</Button>
+    <input id ='pass' type = 'text'><br><br>
+    <Button id ='summit' (click)='doLogin()'>Summit</Button><br><br>
+    <Button id ='sumfb' (click)='doFacebookLogin()'>Summit facebook</Button><br><br>
+    <Button id ='sumGg' (click)='doGoogleLogin()'>Summit Google</Button><br><br>
+    <button id="reg" [routerLink]="['/reg']" routerLinkActive="router-link-active" >Register</button>
 </div>

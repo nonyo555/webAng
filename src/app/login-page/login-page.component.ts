@@ -45,13 +45,13 @@ export class LoginPageComponent implements OnInit {
     })
   })
 }
-doRegister(value){
-  return new Promise<any>((resolve, reject) => {
-    firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
-    .then(res => {
-      resolve(res);
-    }, err => reject(err))
-  })
+doLogin(){
+  var email =( <HTMLInputElement>document.getElementById('email'));
+ var pass =( <HTMLInputElement>document.getElementById('pass'));
+    this.afAuth.auth.signInWithEmailAndPassword(email.value,pass.value).catch(err=>{
+      alert(err);
+    });
+
 }
 }
 
