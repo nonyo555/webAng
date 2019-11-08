@@ -26,22 +26,24 @@ export class RegisterComponent implements OnInit {
 
 
     doRegister(){
-      var email =( <HTMLInputElement>document.getElementById('email')) ;
+    var email =( <HTMLInputElement>document.getElementById('email')) ;
       var pass =( <HTMLInputElement>document.getElementById('pass'));
       var pass2 =( <HTMLInputElement>document.getElementById('pass2'));
       var idHave = false   
       if(pass.value == pass2.value){
-      var test =firebase.auth().createUserWithEmailAndPassword(email.value,pass.value).catch
+      var test =firebase.auth().createUserWithEmailAndPassword(email.value,pass.value).then(
+        sucess =>{
+          this.RegisterACC(email.value);
+        })
+      .catch
       (err =>{  
         alert(err.message)
         idHave = true;
       })
-      if(!idHave){
-      this.RegisterACC(email.value);}
+     
       email.value ='';
       pass.value = '';
       pass2.value = '';
-
     }
       else{
         alert('Password anf Confirm Password don\'t be the same');
@@ -55,6 +57,17 @@ export class RegisterComponent implements OnInit {
         {this.Register();}
       })
       ;*/
+  /*    var fb= this.db.collection("/DataAccount");
+      fb.get().subscribe(
+        querySnapshot =>{
+     
+          
+          
+        },
+        err=>{
+            alert(err);
+        }
+      )*/
 }
  RegisterACC(str :string) {
   var name =( <HTMLInputElement>document.getElementById('name'));
@@ -65,7 +78,8 @@ export class RegisterComponent implements OnInit {
    fb.doc(str).set({
     name: name.value,
     password: age.value,
-    comment: comment.value
+    comment: comment.value,
+    status: true
   })
   name.value ='';
   age.value = '';
